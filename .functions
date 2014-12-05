@@ -1,0 +1,40 @@
+function gpushorigin() {
+    git push origin $1
+}
+
+function gpushupstream() {
+    git push upstream $1
+}
+
+function npminstallglobal() {
+
+    if [ "$#" -gt 0]; then
+        packages=''
+
+        for var in "$@"
+        do
+            packages="$packages $var"
+        done
+
+        npm install -g $packages
+    else
+        npm install -g
+    fi
+}
+
+function npminstall() {
+
+    if [ "$#" -gt 0]; then
+        packages=''
+
+        for var in "$@"
+        do
+            packages="$packages $var"
+        done
+
+        npm install $packages
+    else
+        npm install
+    fi
+}
+
