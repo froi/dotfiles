@@ -68,6 +68,7 @@ echo "Installing development tools..."
 brew install bash-completion
 brew install git
 brew install mysql
+brew install elasticsearch
 
 # Python
 brew install python3
