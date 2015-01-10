@@ -1,9 +1,6 @@
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
 
-# Ensure user-installed binaries take precedence
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
 export HEROKU_HOME="/usr/local/heroku/bin"
 export ANDROID_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/platform-tools"
@@ -27,4 +24,11 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-PATH="$PATH:$GOROOT/bin:$MAVEN_BIN:$GRADLE_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PLAY_FRAMEWORK:$EC2_HOME"
+POSTGRE=/Applications/Postgres.app/Contents/Versions/9.4/bin
+
+USR_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+ADD_PATH="$GOROOT/bin:$MAVEN_BIN:$GRADLE_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PLAY_FRAMEWORK:$EC2_HOME:$POSTGRE"
+
+export PATH=$USR_PATH:$ADD_PATH
+
