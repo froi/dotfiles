@@ -24,7 +24,6 @@ brew cask install --appdir="/Applications" monotype-skyfonts
 
 # Install apps with Cask
 echo "Installing OS X Apps..."
-brew cask install --appdir="/Applications" alfred
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" google-drive
 brew cask install --appdir="/Applications" slack
