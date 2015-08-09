@@ -8,11 +8,8 @@ alias gdocs="cd ~/google_drive"
 alias docs="cd ~/Documents"
 alias dropb="cd ~/Dropbox"
 alias apps="cd ~/Applications"
-alias dev="cd ~/dev"
-alias datasets="cd ~/dev/data_sets"
-alias dbdata="cd ~/dev/dbs_data"
 
-# Navi
+# Navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias home="cd ~/"

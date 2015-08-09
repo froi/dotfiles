@@ -1,12 +1,16 @@
-function gpushorigin() {
+function gp_origin() {
     git push origin $1
 }
 
-function gpushupstream() {
+function gp_upstream() {
     git push upstream $1
 }
 
-function npminstallglobal() {
+function gp_heroku() {
+    git push heroku $1
+}
+
+function npm_install_global() {
 
     if [ "$#" -gt 0]; then
         packages=''
@@ -22,7 +26,7 @@ function npminstallglobal() {
     fi
 }
 
-function npminstall() {
+function npm_install() {
 
     if [ "$#" -gt 0]; then
         packages=''
@@ -36,5 +40,13 @@ function npminstall() {
     else
         npm install
     fi
+}
+
+function go_to_project() {
+    cd ~/google_drive/code/projects/$1
+}
+
+function start_redis() {
+    redis-server /usr/local/etc/redis.conf
 }
 
