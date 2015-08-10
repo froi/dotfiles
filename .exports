@@ -4,7 +4,8 @@ export ARCHFLAGS="-arch x86_64"
 export HEROKU_HOME="/usr/local/heroku/bin"
 export ANDROID_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/platform-tools"
-export PLAY_FRAMEWORK="/Users/froilan/dev/play-2.2.1"
+
+PLAY_FRAMEWORK="/Users/froilan/dev-libs/play-framework"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
