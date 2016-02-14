@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
 	"color_scheme": "Packages/User/SublimeLinter/Nexus (SL).tmTheme",
 	"font_size": 14,
+=======
+	"color_scheme": "Packages/User/SublimeLinter/Flatland Monokai (SL).tmTheme",
+	"font_size": 19,
+>>>>>>> e0da97b2d51ae8c8d7ff8b03dec0f9fdf4121725
 	"ignored_packages":
 	[
 		"Vintage"
