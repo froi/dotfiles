@@ -28,7 +28,6 @@ brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" google-drive
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" authy-bluetooth
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" transmission
@@ -38,11 +37,9 @@ brew cask install --appdir="/Applications" gpgtools
 brew cask install --appdir="/Applications" steam
 brew cask install --appdir="/Applications" grandperspective
 brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" tagspaces
 brew cask install --appdir="/Applications" the-unarchiver
 brew cask install --appdir="/Applications" vlc
 brew cask install --appdir="/Applications" android-file-transfer
-brew cask install --appdir="/Applications" filezilla
 brew cask install --appdir="/Applications" sketch
 brew cask install --appdir="/Applications" screenhero
 
@@ -57,7 +54,6 @@ brew cask install --appdir="/Applications/dev" robomongo
 brew cask install --appdir="/Applications/dev" macdown
 brew cask install --appdir="/Applications/dev" cyberduck
 brew cask install --appdir="/Applications/dev" postgres
-brew cask install --appdir="/Applications/dev" boot2docker
 brew cask install --appdir="/Applications/dev" dash
 brew cask install --appdir="/Applications/dev" pencil
 
@@ -66,8 +62,6 @@ echo "Installing development tools..."
 # General development tools
 brew install bash-completion
 brew install git
-brew install mysql
-brew install elasticsearch
 
 # Python
 brew install python3
@@ -86,19 +80,6 @@ brew install jenv
 # Java tools
 brew install ant
 brew install maven
-brew install tomcat
-brew install glassfish
-brew install jetty
-
-# This has to be tested
-# echo "Registering all Java versions to JENV..."
-# jdk_location='/Library/Java/JavaVirtualMachines/'
-# jdks=($(ls $jdk_location))
-#
-# for i in "${jdks[@]}"
-# do
-#     echo jenv add "${jdk_location}${i}/Contents/Home"
-# done
 
 # Install nvm
 echo "Installing nvm..."
@@ -110,7 +91,6 @@ echo "Installing node..."
 # nvm install 0.10
 nvm install stable
 nvm use stable
-nvm alias default 0.10
 
 # Install Node.js global tools
 echo "Installing global modules with npm..."
@@ -132,35 +112,3 @@ mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 ln -sf $PWD/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 ln -sf $PWD/sublime/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 
-app_store_list = (
-    "Airmail 2"
-    "Deckset"
-    "Pomodoro One"
-    "Lingo"
-    "Tweetdeck"
-    "XCode"
-    "SW Empire at War"
-    "MDB ACCDB Viewer"
-    "iDraw"
-    "Numbers"
-    "Keynote"
-    "Pages"
-)
-echo "Remember to install from App Store"
-for i in "${app_store_list[@]}"
-do
-    echo $i
-done
-
-other_apps = (
-"PyCharm"
-"Intellij Idea"
-"Android SDK"
-"Fitbit"
-"Minecraft...maybe..."
-)
-echo "You also have these apps to install if you want."
-for i in "${other_apps[@]}"
-do
-    echo $i
-done
