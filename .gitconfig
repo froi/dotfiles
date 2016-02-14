@@ -57,7 +57,7 @@
   ll = log
   cp = cherry-pick
   c  = checkout
-  cc = commit
+  cc = commit -m
   ri = rebase -i HEAD~10
   sh = !git-sh
   ro = !git fetch origin && git reset --hard origin/master
@@ -70,3 +70,7 @@
     insteadOf = https://github.com/
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
