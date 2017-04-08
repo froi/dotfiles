@@ -2,19 +2,9 @@
 export ARCHFLAGS="-arch x86_64"
 
 export HEROKU_HOME="/usr/local/heroku/bin"
-export ANDROID_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/tools"
-export ANDROID_PLATFORM_TOOLS="/Users/froilan/dev/adt-bundle-mac-x86_64-20131030/sdk/platform-tools"
-
-PLAY_FRAMEWORK="/Users/froilan/dev-libs/play-framework"
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-export MAVEN_BIN="/Users/froilan/dev/utils/apache-maven-2.2/bin"
-export GRADLE_BIN="/Users/froilan/dev/utils/gradle-1.10/bin"
-export GOROOT="/usr/local/Cellar/go"
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/google_drive/code/projects
+export PROJECT_HOME=$HOME/code/projects
 
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -25,15 +15,10 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-export NODE_PATH=/Users/froilan/.nvm/versions/node/v4.1.2/bin/node
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 POSTGRE=/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 USR_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-ADD_PATH="$GOROOT/bin:$MAVEN_BIN:$GRADLE_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PLAY_FRAMEWORK:$EC2_HOME:$POSTGRE:${JBOSS_HOME}/bin"
+ADD_PATH="$POSTGRE"
 
 export PATH=$USR_PATH:$ADD_PATH
-

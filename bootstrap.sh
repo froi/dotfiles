@@ -61,9 +61,7 @@ function createSymlinks() {
 # Run
 createSymlinks
 
-echo
 echoB "--> [DONE]"
-echo
 
 unset echoY
 unset echoR

@@ -1,6 +1,6 @@
 [user]
   name = Froilan Irizarry
-  email = irizarry.froilan@gmail.com
+  email = froilan@froilanirizarry.me
 
 [core]
   excludesfile = ~/.gitignore
@@ -48,8 +48,6 @@
   st = status
   ci = commit
   co = checkout
-  br = branch
-  ls = branch
   a  = add
   b  = branch
   dc = diff --cached

@@ -28,34 +28,26 @@ brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" google-drive
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" authy-bluetooth
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" transmission
 brew cask install --appdir="/Applications" paparazzi
 brew cask install --appdir="/Applications" viscosity
 brew cask install --appdir="/Applications" gpgtools
 brew cask install --appdir="/Applications" steam
-brew cask install --appdir="/Applications" grandperspective
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" the-unarchiver
 brew cask install --appdir="/Applications" vlc
-brew cask install --appdir="/Applications" android-file-transfer
 brew cask install --appdir="/Applications" sketch
-brew cask install --appdir="/Applications" screenhero
 
 # Dev apps
-brew cask install --appdir="/Applications/dev" sublime-text3
-brew cask install --appdir="/Applications/dev" iterm2
-brew cask install --appdir="/Applications/dev" heroku-toolbelt
-brew cask install --appdir="/Applications/dev" virtualbox
-brew cask install --appdir="/Applications/dev" vagrant
-brew cask install --appdir="/Applications/dev" gitx-rowanj
-brew cask install --appdir="/Applications/dev" robomongo
-brew cask install --appdir="/Applications/dev" macdown
-brew cask install --appdir="/Applications/dev" cyberduck
-brew cask install --appdir="/Applications/dev" postgres
-brew cask install --appdir="/Applications/dev" dash
-brew cask install --appdir="/Applications/dev" pencil
+brew cask install --appdir="/Applications" iterm2
+brew cask install --appdir="/Applications" heroku-toolbelt
+brew cask install --appdir="/Applications" gitx-rowanj
+brew cask install --appdir="/Applications" robomongo
+brew cask install --appdir="/Applications" macdown
+brew cask install --appdir="/Applications" cyberduck
+brew cask install --appdir="/Applications" postgres
+brew cask install --appdir="/Applications" dash
 
 # Install development tools with Homebrew
 echo "Installing development tools..."
@@ -67,23 +59,9 @@ brew install git
 brew install python3
 brew install python
 
-# GO
-brew install go
-
-echo "Install all the Java!!!"
-# Official Oracle JDK
-brew install cask java
-
-# Java env handler
-brew install jenv
-
-# Java tools
-brew install ant
-brew install maven
-
 # Install nvm
 echo "Installing nvm..."
-curl https://raw.githubusercontent.com/creationix/nvm/v0.17.2/install.sh | PROFILE=~/.extras bash
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 source ~/.bash_profile
 
 # Install latest v0.10.x release of node
@@ -105,10 +83,4 @@ npm install -g jshint
 echo "Installing Python tools"
 mkdir ~/.virtualenvs
 pip install virtualenvwrapper
-pip3 install flake8
-
-# Setup Sublime Text 3
-mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-ln -sf $PWD/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
-ln -sf $PWD/sublime/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
-
+pip3 install pylint
