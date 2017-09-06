@@ -1,10 +1,11 @@
 [user]
   name = Froilan Irizarry
   email = froilan@froilanirizarry.me
+	signingkey = 346102B3
 
 [core]
   excludesfile = ~/.gitignore
-  editor = subl -n -w
+  editor = vim
   quotepath = false
 
 [color]
@@ -40,13 +41,12 @@
   p = !git pull --rebase
 
   # Commit all changes
-  ca = !git add . && git add -u && git commit -m
+  ca = !git add . && git add -u && git commit -S -m
 
   # Switch to a branch, creating it if necessary
   go = checkout -B
 
   st = status
-  ci = commit
   co = checkout
   a  = add
   b  = branch
@@ -55,7 +55,6 @@
   ll = log
   cp = cherry-pick
   c  = checkout
-  cc = commit -m
   ri = rebase -i HEAD~10
   sh = !git-sh
   ro = !git fetch origin && git reset --hard origin/master
@@ -63,6 +62,7 @@
 
   # GitHub Pull Request Management
   pr = "!f() { git fetch -fu origin refs/pull/$1/head:pr/$1; } ; f"
+  cs = commit -S -m
 
 [url "git@github.com:"]
     insteadOf = https://github.com/
@@ -72,3 +72,13 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit "gpg"]
+	sign = true
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = [A-Z0-9]{20}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+	providers = cat /Users/froilan/.git-secrets/code-gov.patterns
