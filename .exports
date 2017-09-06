@@ -6,6 +6,8 @@ export HEROKU_HOME="/usr/local/heroku/bin"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/projects
 
+export GOPATH=$HOME/go
+
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
@@ -15,10 +17,10 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-POSTGRE=/Applications/Postgres.app/Contents/Versions/9.4/bin
+POSTGRE=/Applications/Postgres.app/Contents/Versions/9.6/bin
 
 USR_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-ADD_PATH="$POSTGRE"
+ADD_PATH="$POSTGRE:$GOPATH"
 
 export PATH=$USR_PATH:$ADD_PATH
