@@ -55,6 +55,8 @@ echo "Installing development tools..."
 brew install bash-completion
 brew install git
 
+brew install libmemcached
+
 # Python
 brew install python3
 brew install python
