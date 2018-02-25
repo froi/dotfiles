@@ -1,7 +1,7 @@
 # Directory shortcuts
 alias code="cd ~/code"
 alias projects="cd ~/code/projects"
-alias testcode="cd ~/code/testCode"
+alias playground="cd ~/code/playground"
 alias virtEnvs="cd ~/.virtualenvs"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"

@@ -1,32 +1,12 @@
 #!/bin/bash
 
-# Colors
-function echoY() {
-    prompt="$1"
-    echo -e -n "\033[32m$prompt"
-    echo -e -n '\033[0m'
-    echo ''
-}
-function echoR() {
-    prompt="$1"
-    echo -e -n "\033[31m$prompt"
-    echo -e -n '\033[0m'
-    echo ''
-}
-function echoB() {
-    prompt="$1"
-    echo -e -n "\033[34m$prompt"
-    echo -e -n '\033[0m'
-    echo ''
-}
-
 # Get file list
-function getFilesInDir() {
-    find . -type f -name '.*' -exec basename {} ';'
+function getDotFiles() {
+    find dotfiles/ -type f -name '.*' -exec basename {} ';'
 }
 
 # Set vars
-FILES=$(getFilesInDir)
+FILES=$(getDotFiles)
 CURRENTPATH=$(pwd)
 FORCE=false
 
@@ -35,38 +15,34 @@ if [ "$1" == "--force" ]; then
     FORCE=true
 fi
 
-function createSymlinks() {
-    for F in ${FILES[@]}; do
-        # Delete files if --force was used
-        if [ $FORCE == true ]; then
-            echoR "--> [DELETE]: $HOME/${F}"
-            rm $HOME/$F
-        fi
+for F in ${FILES[@]}; do
+    # Delete files if --force was used
+    if [ $FORCE == true ]; then
+        echoRed "--> [DELETE]: $HOME/${F}"
+        rm $HOME/$F
+    fi
 
-        # Make symlink
-        echoY "--> [LINK]: ${HOME}/${F} -> ${CURRENTPATH}/${F}"
-        ln -s $CURRENTPATH/$F $HOME/$F
+    # Make symlink
+    echoGreen "--> [LINK]: ${CURRENTPATH}/dotfiles/${F} -> ${HOME}/${F}"
+    ln -s $CURRENTPATH/dotfiles/$F $HOME/$F
 
-        if [ $? -eq 1 ]; then
-            echo
-            echoR "--> [ERROR]: You have already have a file named ${F} in your home folder."
-            echoR "    Please backup of your old files."
-            echoR "    Using \"--force\" will allow you to overwrite your existing files."
-            echo
-            break
-        fi
-    done
-}
+    if [ $? -eq 1 ]; then
+        echo
+        echoRed "--> [ERROR]: You have already have a file named ${F} in your home folder."
+        echoRed "    Please backup of your old files."
+        echoRed "    Using \"--force\" will allow you to overwrite your existing files."
+        echo
+        break
+    fi
+done
 
-# Run
-createSymlinks
-
-echoB "--> [DONE]"
-
-unset echoY
-unset echoR
-unset echoB
-unset getFilesInDir
-unset createSymlinks
+if [ $FORCE == true ]; then
+    echoRed "--> [DELETE]: $HOME/.hammerspoon/init.lua"
+    rm $HOME/.hammerspoon/init.lua
+fi
+echoGreen "--> [LINK]: ${CURRENTPATH}/app_files/hammerspoon-init.lua -> ${HOME}/.hammerspoon/init.lua"
+ln -s $CURRENTPATH/app_files/hammerspoon/init.lua $HOME/.hammerspoon/init.lua
 
 source ~/.bash_profile
+
+echoBlue "--> [DONE]"

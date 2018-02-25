@@ -17,10 +17,12 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-POSTGRE=/Applications/Postgres.app/Contents/Versions/9.6/bin
+VSCODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+
+POSTGRES="/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 USR_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-ADD_PATH="$POSTGRE:$GOPATH"
+ADD_PATH="$POSTGRES:$GOPATH:VSCODE"
 
 export PATH=$USR_PATH:$ADD_PATH
