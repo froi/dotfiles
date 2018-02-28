@@ -1,4 +1,5 @@
 #!/bin/bash
+source utils.sh
 
 # Homebrew
 echo -e "\n"
@@ -46,3 +47,7 @@ echoGreen "==============  Install Python tools =============="
 mkdir ~/.virtualenvs
 pip3 install virtualenvwrapper
 pip3 install pylint
+
+echo -e "\n"
+echoGreen "==============  Install Jekyll =============="
+gem install jekyll bundler
