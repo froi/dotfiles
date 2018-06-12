@@ -50,4 +50,4 @@ pip3 install pylint
 
 echo -e "\n"
 echoGreen "==============  Install Jekyll =============="
-gem install jekyll bundler
+sudo gem install jekyll bundler
