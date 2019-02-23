@@ -1,13 +1,10 @@
 # Directory shortcuts
-alias code="cd ~/code"
 alias projects="cd ~/code/projects"
 alias playground="cd ~/code/playground"
-alias virtEnvs="cd ~/.virtualenvs"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias dropb="cd ~/Dropbox"
 alias apps="cd ~/Applications"
-alias vscode="/usr/local/bin/code"
 
 # Navigation
 alias ..="cd .."
@@ -16,7 +13,7 @@ alias home="cd ~/"
 
 # Command shortcuts
 alias ls="ls -alh"
-alias server='python -m SimpleHTTPServer 8888'
+alias server='python3 -m SimpleHTTPServer 8888'
 
 # OSX specific utils
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder app'

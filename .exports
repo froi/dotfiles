@@ -2,8 +2,6 @@
 export ARCHFLAGS="-arch x86_64"
 
 export HEROKU_HOME="/usr/local/heroku/bin"
-
-export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/projects
 
 export GOPATH=$HOME/go
@@ -17,12 +15,10 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-VSCODE="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-
 POSTGRES="/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 USR_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-ADD_PATH="$POSTGRES:$GOPATH:VSCODE"
+ADD_PATH="$POSTGRES:$GOPATH"
 
 export PATH=$USR_PATH:$ADD_PATH
