@@ -1,11 +1,11 @@
 [user]
-  name = Froilan Irizarry
-  email = froilan@froilanirizarry.me
-	signingkey = 346102B3
+  name = Froilán Irizarry Rivera
+  email = 1918027+froi@users.noreply.github.com
+  signingkey = not-a-key
 
 [core]
-  excludesfile = ~/.gitignore
-  editor = vim
+  excludesfile = ~/.gitignore_global
+  editor = code -w
   quotepath = false
 
 [color]
@@ -15,71 +15,34 @@
   diff = true
   ui = true
 
-[difftool "gitx"]
-  cmd = gitx
-
-[difftool]
-  prompt = false
-
 [diff]
-  tool = gitx
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
-[alias]
-  # View the SHA, description, and history graph of the latest 20 commits
-  l = log --graph --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-
-  # View the current working tree status using the short format
-  s = status -s
-
-  # Diff
-  d = diff --patch-with-stat
-
-  # Pull in remote changes for the current repository and all its submodules
-  p = !git pull --rebase
-
-  # Commit all changes
-  ca = !git add . && git add -u && git commit -S -m
-
-  # Switch to a branch, creating it if necessary
-  go = checkout -B
-
-  st = status
-  co = checkout
-  a  = add
-  b  = branch
-  dc = diff --cached
-  v  = show
-  ll = log
-  cp = cherry-pick
-  c  = checkout
-  ri = rebase -i HEAD~10
-  sh = !git-sh
-  ro = !git fetch origin && git reset --hard origin/master
-  tree = log --graph --decorate --pretty=oneline --abbrev-commit
-  cs = commit -S -m
-
-  # GitHub Pull Request Management
-  pr = "!f() { git fetch -fu origin refs/pull/$1/head:pr/$1; } ; f"
-
-
 [url "git@github.com:"]
-    insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [push]
-	default = simple
+  default = simple
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
-[commit "gpg"]
-	sign = true
-[secrets]
-	providers = git secrets --aws-provider
-	patterns = [A-Z0-9]{20}
-	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-	allowed = AKIAIOSFODNN7EXAMPLE
-	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-	providers = cat /Users/froilan/.git-secrets/code-gov.patterns
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+[commit]
+  template = ~/.gitmessage
+  gpgsign = true
+[pull]
+  rebase = false
+[gpg]
+  program = gpg
+[init]
+  defaultBranch = main
